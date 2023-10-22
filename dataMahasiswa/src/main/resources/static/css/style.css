@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+body{
+	background: url("img/geometric-leaves.png")
+}
+
+#inputdata{
+	margin: auto auto;
+	width: 80%;
+    height: 80%;
+}
+
+.box{
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+    height: 500px;
+	background-color: white;
+	box-shadow: 2px 2px 20px 2px  green;
+}
+
+input[type=text]{
+	border-color: palegreen;
+	width: 93%;
+  	padding: 10px;
+}
+
+input[type=submit]{
+	background-color: palegreen;
+	width: 50%;
+	height: 30px;
+	cursor: pointer;
+}
+
+h2{
+	margin-bottom: 0;
+	margin-top: 5px;
+	text-align: center;
+}
+
+table{
+	margin: auto auto;
+	font-size: 20px;
+}

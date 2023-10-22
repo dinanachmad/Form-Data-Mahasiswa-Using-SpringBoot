@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Input Data</title>
+<link th:href= "@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+	<div class = "box">
+		<div id= "inputdata">
+			<br>
+			<h2>Selamat Datang</h2>
+			<h2>Silakan Input Data Mahasiswa</h2><br><br>
+			<form action="#" th:action="@{/saveData}" th:object="${mahasiswa}">
+				<label for="nama">Nama</label><br>
+				<input type="text" th:field="*{nama}" placeholder="Masukan Nama" class="nama" name="nama"><br><br>
+				<label for="nim">Nim</label><br>
+				<input type="text" th:field="*{nim}" placeholder="Masukan Nim" class="nim" name="nim"><br><br>
+				<label for="tgl">Tanggal Lahir</label><br>
+				<input type="text" th:field="*{tgl}" placeholder="Masukan Tanggal Lahir" class="tgl" name="tgl"><br><br>
+				<label for="alamat">Alamat</label><br>
+				<input type="text" th:field="*{alamat}" placeholder="Masukan Alamat" class="alamat" name="alamat"><br><br>
+				<input type="submit">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

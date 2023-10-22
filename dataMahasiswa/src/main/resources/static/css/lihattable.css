@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+body{
+	background: url(img/geometric-leaves.png);
+}
+
+.boxutama{
+	width: 45%;
+	margin: auto auto;
+}
+
+#boxutama2{
+	text-align: center;
+}
+
+.boxutama.boxNext{
+	display: inline;
+}
+
+.boxutama.boxLast{
+	display: inline;
+}
+
+.row1{
+	background-color: palegreen;
+}
+
+h1{
+	text-align: center;
+}
+
+table{
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}

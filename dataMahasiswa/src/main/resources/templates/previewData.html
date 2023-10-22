@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Preview Data</title>
+<link th:href= "@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+	<div class="box">
+	<br><br>
+	<h2>Data berhasil di Input</h2>
+	<br><br>
+	
+	<table cellpadding="10">
+		<tr>
+			<td>Nama</td>
+			<td th:text="': ' + ${mahasiswa.nama}"></td>
+		</tr>
+		<tr>
+			<td>Nim</td>
+			<td th:text="': ' + ${mahasiswa.nim}"></td>
+		</tr>
+		<tr>
+			<td>Tanggal Lahir</td>
+			<td th:text="': ' + ${mahasiswa.tgl}"></td>
+		</tr>
+		<tr>
+			<td>Alamat</td>
+			<td th:text="': ' + ${mahasiswa.alamat}"></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<form action="#" th:action="@{/lihatData}" class="submitlihatdata">
+					<input type="submit" value="Lihat Data">
+				</form>
+			</td>
+		</tr>
+	</table>
+	<br>
+	
+	</div>
+</body>
+</html>
