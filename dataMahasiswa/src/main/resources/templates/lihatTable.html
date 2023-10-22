@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Table Data Mahasiswa</title>
+<link th:href= "@{/css/lihattable.css}" rel="stylesheet">
+</head>
+<body>
+	<div class="boxutama">
+	<h1>Table Data Mahasiswa</h1>
+	<table border="1" cellpadding="10">
+		<tr class="row1">
+			<td>
+				<a th:href="@{'/page/' + ${currentPage} + '?sortField=nama&sortDir=' + ${reverseSortDir}}">
+       			Nama
+       	 		</a>
+			</td>
+			<td>Nim</td>
+			<td>Tanggal Lahir</a>
+			</td>
+			<td>
+				<a th:href="@{'/page/' + ${currentPage} + '?sortField=alamat&sortDir=' + ${reverseSortDir}}">
+       			Alamat
+       	 		</a>
+			</td>
+			<td>Action</td>
+		</tr>
+		<tr th:each="mahasiswa : ${listMahasiswa}">
+			<td th:text="${mahasiswa.nama}"></td>
+     		<td th:text="${mahasiswa.nim}"></td>
+    		<td th:text="${mahasiswa.tgl}"></td>
+    		<td th:text="${mahasiswa.alamat}"></td>	
+			<td>
+				<form action="#" th:action="@{/editData/{id}(id=${mahasiswa.id})}">
+					<input type="submit" value="Edit">
+				</form>
+				<form action="#" th:action="@{/hapusData/{id}(id=${mahasiswa.id})}">
+					<input type="submit" value="Hapus">
+				</form>
+			</td>
+		</tr>
+	</table>
+	<br><br>
+	<div th:if = "${totalPages > 1}" id="boxutama2">
+    	<div>
+    		<div>
+     			Total Rows: [[${totalItems}]] 
+    		</div>
+    		<div>
+     			<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+      				<a th:if="${currentPage != i}" th:href="@{'/page/' + ${i}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">[[${i}]]</a>
+      				<span th:unless="${currentPage != i}">[[${i}]]</span>  &nbsp; &nbsp;
+     			</span>
+   			</div>
+     			<a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${currentPage + 1}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Next</a>
+     			<span th:unless="${currentPage < totalPages}">Next</span>
+    
+        		<a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${totalPages}+ '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a>
+     			<span th:unless="${currentPage < totalPages}">Last</span>
+   		</div>
+  	</div>
+  	</div>
+</body>
+</html>
